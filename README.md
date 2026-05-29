@@ -10,6 +10,7 @@ A FastAPI-based CRM backend for debt collection and sales management with AI voi
 - **AI Voice**: ElevenLabs text-to-speech integration
 - **JWT Authentication**: Secure API endpoints
 - **SQLModel**: Type-safe database models
+- **Custom Phone Integration**: Support for your own US phone number
 
 ## Tech Stack
 
@@ -162,17 +163,26 @@ curl -X GET "http://localhost:8000/api/people/" \
 | `AUTH_PASSWORD` | Admin password | `password` |
 | `ELEVENLABS_API_KEY` | ElevenLabs API key | Required for voice |
 | `ELEVENLABS_VOICE_ID` | ElevenLabs voice ID | Required for voice |
+| `CALLER_PHONE_NUMBER` | Your US phone number for outgoing calls | Optional |
+
+## Call Integration
+
+This backend is designed to work with your own US phone number. You can integrate your phone system by:
+
+1. **Setting up a webhook** to log incoming/outgoing calls
+2. **Using the Call Log API** to store call details and transcripts
+3. **Generating voice** using ElevenLabs for text-to-speech
 
 ## Next Steps
 
 - [ ] Add email logging endpoints
-- [ ] Integrate Twilio for voice calls
-- [ ] Add AI call summaries
+- [ ] Add AI call summaries using OpenAI
 - [ ] Build React frontend with react-simple-maps
 - [ ] Add database migrations (Alembic)
 - [ ] Add input validation
 - [ ] Deploy to production
 - [ ] Add WebSocket support for real-time updates
+- [ ] Integrate with your phone system
 
 ## License
 
