@@ -6,6 +6,7 @@ from .ai_voice import router as ai_voice_router
 from .auth import router as auth_router
 from .person_router import router as person_router
 from .ai_calls import router as ai_calls_router
+from .phone_integration import router as phone_router
 
 app = FastAPI(title="CRM Backend", version="1.0.0")
 
@@ -27,6 +28,7 @@ app.include_router(auth_router)
 app.include_router(person_router)
 app.include_router(ai_calls_router)
 app.include_router(ai_voice_router)
+app.include_router(phone_router)
 
 @app.get("/")
 def root():
